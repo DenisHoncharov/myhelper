@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>WebM 2Grid Test</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--адаптация для смарфонов и т.д.-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/font-awesome.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<!--панель навигации и форма для авторизации-->
+    <div id="mainnav" class="navbar navbar-inverse navbar-static-top">
+        <!--navbar-static-top - адаптивна на всю длину прикреп к верху-->
+        <div class="container">
+            <div class="navbar-header">
+                <!--navbar-header - главная часть меню навигации(логотип, название)-->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">                              <!--navbar-toggle - отвечает за отображение и скрывание меню. Кнопка для выскакивающего меню.-->
+                                                                                                                                          <!--data-toggle="collapse" - обозначает какой элемент он будет скрывать(class="collapse)-->
+                                                                                                                                          <!--data-target="#responsive-menu" - уточняет к какому блоку(id="responsive-menu")-->
+            <span class="sr-only">Open nav</span>                                                             <!--делает эту кнопку видимой только на скрин ридерах(для слепых)-->
+            <span class="icon-bar"></span>                                                                    <!--Делает полосочку на кнопке-->
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+                <a href="#" class="navbar-brand">Logo</a>
+                <!--navbar-brand - кликабельный "логотип" компании-->
+            </div>
+            <div class="collapse navbar-collapse" id="responsive-menu">
+                <!--collapse navbar-collapse - навигационная часть меню навигации(ссылки на сайте)-->
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Punkt 1</a></li>
+                    <li class="dropdown">
+                        <!--dropdown - заставляет выпадать dropdown-menu-->
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Punkt 2 <b class="caret"></b></a>
+                        <!--<b class="caret"> - треугольник по типу выпад меню
+                        dropdown-toggle - говорит что это нажымающаяся "часть".
+                        data-toggle="dropdown" - подключает скрипт для выпадания  -->
+                        <ul class="dropdown-menu">
+                            <!-- dropdown-menu - создает меню которое будет выпадать-->
+                            <li><a href="#1">подменю 1</a></li>
+                            <li class="divider"></li>
+                            <!--divider - просто разделитель(как <hr>)-->
+                            <li><a href="#2">подменю 2</a></li>
+                            <li><a href="#3">подменю 3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Punkt 3</a></li>
+                    <li><a href="#">Punkt 4</a></li>
+                </ul>
+<!--форма для авторизации-->
+                <form action=""class="navbar-form navbar-right">
+                    <!--раздел на две групы нужен что бы они не слипались при xs размере-->
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="E-mail" value="">
+                    </div>
+                    <div class="form-group">
+                        <input type="password"  class="form-control"placeholder="password" value="">
+                    </div>
+                    <button type="submit" class="btn btn-info"><i class="fa fa-sign-in"></i>Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<!--хлебные крошки-->
+    <div class="container">
+        <!--container в row - нужен затем, что бы убрать все отступы слева и справа (row - расширяет на 15пх по сторонам, а container - убирает по 15пх) -->
+        <div class="row">
+            <div class="container">
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-home"></i></a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Category</a></li>
+                    <li class="tag"><a href="#">The name of posts</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+<!--создание слайдера-->
+    <div id="carousel" class="carousel slide">
+        <!--создание блока в котором будет показ слайдов-->
+        <!--индикаторы-->
+        <ol class="carousel-indicators">
+            <!--индикаторы(показатели сколько слайдов и на каком мы сейчас)-->
+            <li class="active" data-target="#carousel" data-slide-to="0"></li>
+            <!--class="active" делает изначально активным первый индикатор.
+                                                                                                data-target="#carousel" - указывает к кому именно это примен
+                                                                                                data-slide-to="0" - переход к указанному слайду-->
+            <li data-target="#carousel" data-slide-to="1"></li>
+            <li data-target="#carousel" data-slide-to="2"></li>
+        </ol>
+
+        <!--слайды-->
+        <div class="carousel-inner">
+            <div class="item active">
+                <!--item - говорит что это содержимое. active - делает изначально активным первый слайд-->
+                <img src="image/1.jpg" alt="">
+                <div class="carousel-caption">
+                    <!--carousel-caption - задание описания для слайда-->
+                    <h3>Первый слайд</h3>
+                    <p>Описание первого слайда</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/2.jpg" alt="">
+                <div class="carousel-caption">
+                    <!--carousel-caption - задание описания для слайда-->
+                    <h3>Второй слайд</h3>
+                    <p>Описание второго слайда</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/3.jpg" alt="">
+                <div class="carousel-caption">
+                    <!--carousel-caption - задание описания для слайда-->
+                    <h3>Третий слайд</h3>
+                    <p>Описание третьего слайда</p>
+                </div>
+            </div>
+        </div>
+
+        <!--создание кнопок переключения слайдов-->
+        <a href="#carousel" class="left carousel-control" data-slide="prev">
+            <!--кнопка ссылаюцаяся на конкретный блок со слайдами(href="#carousel") его расположение(class="left carousel-control") и указывает куда он будет перелистывать (data-slide="prev")-->
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <!--задание иконки(встроенная в бустрап)-->
+        </a>
+        <a href="#carousel" class="right carousel-control" data-slide="next">
+            <!--кнопка ссылаюцаяся на конкретный блок со слайдами(href="#carousel") его расположение(class="right carousel-control") и указывает куда он будет перелистывать (data-slide="next")-->
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <!--задание иконки(встроенная в бустрап)-->
+        </a>
+    </div>
+
+<!--использование иконок растерной графики-->
+    <p><a href="http://vk.com"><i class="fa fa-vk fa-3x" aria-hidden="true" ></i></a></p>
+<!-- https://www.youtube.com/watch?v=ANra2GLJ_cU&index=7&list=PLypd1VrGv7FPokhw3f5pwBQTHsU9T2mBq -->
+
+<!--Использование кнопок-->
+    <div class="container">
+
+        <!--пример кнопок-->
+        <p>
+            <a href="#" class="btn btn-default"><span class="fa fa-vk fa-1x"></span> Кнопка</a>
+            <a href="#" class="btn btn-primary">Кнопка</a>
+            <a href="#" class="btn btn-success">Кнопка</a>
+            <a href="#" class="btn btn-warning">Кнопка</a>
+            <a href="#" class="btn btn-info">Кнопка</a>
+            <a href="#" class="btn btn-danger">Кнопка</a>
+        </p>
+
+        <!--стандартные размеры-->
+        <p>
+            <a href="#" class="btn btn-primary btn-lg">Кнопка</a>
+            <a href="#" class="btn btn-primary">Кнопка</a>
+            <a href="#" class="btn btn-primary btn-sm">Кнопка</a>
+            <a href="#" class="btn btn-primary btn-xs">Кнопка</a>
+
+            <a href="#" class="btn btn-primary btn-block">Кнопка</a>
+            <!--занимает 100% шириный всего блока-->
+        </p>
+
+        <!--состояние кнопок-->
+        <p>
+            <a href="#" class="btn active">Кнопка</a>
+            <!--нажатая-->
+            <a href="#" class="btn disabled">Кнопка</a>
+            <!--нерабочая-->
+        </p>
+    </div>
+
+<!--Группирование кнопок-->
+<!--К группам кнопок можно применять те же размеры как и к отдельной кнопке(btn-sm ...)-->
+    <div class="container">
+        <div class="btn-toolbar">
+            <!--групирует группы кнопок-->
+            <div class="btn-group">
+                <!--группирует кнопки-->
+                <a href="#" class="btn btn-primary"><i class="fa fa-vk fa-2x"></i></a>
+                <a href="#" class="btn btn-primary"><i class="fa fa-apple fa-2x"></i></a>
+                <a href="#" class="btn btn-primary"><i class="fa fa-facebook-square  fa-2x"></i></a>
+            </div>
+            <div class="btn-group">
+                <!--группирует кнопки-->
+                <a href="#" class="btn btn-primary"><i class="fa fa-vk fa-2x"></i></a>
+                <a href="#" class="btn btn-primary"><i class="fa fa-apple fa-2x"></i></a>
+                <a href="#" class="btn btn-primary"><i class="fa fa-facebook-square  fa-2x"></i></a>
+            </div>
+            <div class="btn-group">
+                <!--группирует кнопки-->
+                <a href="#" class="btn btn-primary"><i class="fa fa-vk fa-2x"></i></a>
+                <a href="#" class="btn btn-primary"><i class="fa fa-apple fa-2x"></i></a>
+                <a href="#" class="btn btn-primary"><i class="fa fa-facebook-square  fa-2x"></i></a>
+            </div>
+        </div>
+        <br>
+        <div class="btn-toolbar">
+            <div class="btn-group-justified">
+                <!--заполняет всю ширину контейнера-->
+                <a href="#" class="btn btn-primary"><i class="fa fa-vk fa-2x"></i></a>
+                <a href="#" class="btn btn-primary"><i class="fa fa-apple fa-2x"></i></a>
+                <a href="#" class="btn btn-primary"><i class="fa fa-facebook-square  fa-2x"></i></a>
+            </div>
+            <br>
+            <div class="btn-group-vertical">
+                <!--Делает кнопки вертикальными-->
+                <a href="#" class="btn btn-primary"><i class="fa fa-vk fa-2x"></i></a>
+                <a href="#" class="btn btn-primary"><i class="fa fa-apple fa-2x"></i></a>
+                <a href="#" class="btn btn-primary"><i class="fa fa-facebook-square  fa-2x"></i></a>
+            </div>
+        </div>
+    </div>
+
+<!--Dropdown button(1)-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <!--dropup - указывает куда будет выпадать меню. pull-right - группа кнопок прижметься вправую сторону-->
+                <div class="btn-group dropup">
+                    <button class="btn btn-default dropdown-toogle" data-toggle="dropdown">    <!--toggle - показатель состояния(при нажатии появляеться и при нажатии исчезает)-->
+                    Dropdown menu <span class="caret"></span>                                <!--caret - треугольник вниз-->
+                </button>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <!--dropdown-menu-right - прижимает выпадающее меню к правой части-->
+                        <li><a href="#">Link Link Link Link</a></li>
+                        <li><a href="#">Link Link Link Link</a></li>
+                        <li><a href="#">Link Link Link</a></li>
+                        <li><a href="#">Link Link Link Link</a></li>
+                        <li><a href="#">Link Link Link Link</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="btn-group">
+                    <!--dropup - указывает куда будет выпадать меню. pull-right - группа кнопок прижметься вправую сторону-->
+                    <button class="btn btn-success">    <!--toggle - показатель состояния(при нажатии появляеться и при нажатии исчезает)-->
+                    Dropdown menu
+                </button>
+                    <button class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                     <span class="caret"></span>                                <!--caret - треугольник вниз-->
+                </button>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <!--dropdown-menu-right - прижимает выпадающее меню к правой части-->
+                        <li><a href="#">Link Link Link Link</a></li>
+                        <li><a href="#">Link Link Link Link</a></li>
+                        <li><a href="#">Link Link Link Link</a></li>
+                        <li><a href="#">Link Link Link Link</a></li>
+                        <li><a href="#">Link Link Link Link</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+<!--Tabs Вкладки-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="tabs">
+                    <ul class="nav nav-tabs"> <!--ещё можно исп nav-pills - вид будет как кнопки (data-toggle="pill" - в li)-->
+                        <!--nav-tabs - меню для навигации (кнопки)-->
+                        <li class="active"><a href="#tab-1" data-toggle="tab">Вкладка 1</a></li>
+                        <!-- href="#tab-1" - отсылка к конкретной таб. data-toggle="tab" - с кем будет происходить при нажатии-->
+                        <li><a href="#tab-2" data-toggle="tab">Вкладка 2</a></li>
+                        <li><a href="#tab-3" data-toggle="tab">Вкладка 3</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <!--tab-content - определяет блок кода в котором будет храниться инфа-->
+                        <div class="tab-pane active fade in" id="tab-1">
+                            <!--fade in -  задает свойство js (медленное появление при выборе)-->
+                            <p>Paragraph with text 1</p>
+                        </div>
+                        <div class="tab-pane fade" id="tab-2">
+                            <p>Paragraph with text 2</p>
+                        </div>
+                        <div class="tab-pane fade" id="tab-3">
+                            <p>Paragraph with text 3</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--Спойлеры(текст который скрываеться и прячется на страничке)-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <a href="#spoiler-1" data-toggle="collapse" class="btn btn-primary spoiler collapsed">Open spoiler</a>
+                <!--spoiler collapsed - для придания стиля через ксс. collapsed- пропадает при раскрытии спойлера-->
+                <div class="collapse" id="spoiler-1">
+                    <!--collapse - прячет блок с информацией-->
+                    <div class="well">
+                        <!--well - создает блок с информацией-->
+                        <p>Paragraph with text</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--Аккордеон-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div id="accordion" class="panel-group">
+                    <!--id - нужен что бы указать радителя-->
+                    <div class="panel panel-default">
+                        <!--panel-default - указывает цвет панели(как кнопки)-->
+                        <div class="panel-heading">
+                            <!--объявляем заголовок (имя вкладки которое будет открывать весь контент)-->
+                            <h4 class="panel-title">                <!--оформляет заголовок-->
+                                <a href="#1" data-toggle="collapse" data-parent="#accordion">Open 1 slide</a>    <!--указывает кого будет открывать эта вкладка и кто для нее будет родителем(data-parent="#accordion")-->
+                            </h4>
+                        </div>
+                        <div id="1" class="panel-collapse collapse in">
+                            <!--обьявляет содердание колонки-->
+                            <div class="panel-body">
+                                <!--оформляет колонку содержания-->
+                                <p>All content print content here for all day</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a href="#2" data-toggle="collapse" data-parent="#accordion">Open 2 slide</a>
+                            </h4>
+                        </div>
+                        <div id="2" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <p>All content print content here for all day</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a href="#3" data-toggle="collapse" data-parent="#accordion">Open 3 slide</a>
+                            </h4>
+                        </div>
+                        <div id="3" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <p>All content print content here for all day</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--всплывающее окно (по типу как для регистрации)-->
+        <div class="container">
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-1">Open modal window</button>
+            <!--class="fade" - нужен для того, что бы окошко появлялось красиво-->
+            <div class="modal fade" id="modal-1">
+                <div class="modal-dialog">        <!--этому элементу можно задавать размер как и кнопке-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <!--data-dismiss="modal - означает что действие с этим элем будет закрывать(отменять) окно-->
+                            <!--class="close - для применения стилей-->
+                            <!--<button class="close" - должен быть над заголовком потому что у  него прописанны паддинги для правильного располжения-->
+                            <button class="close" type="button" data-dismiss="modal"><i class="fa fa-close"></i></button>
+                            <h4 class="modal-title">Name of modal</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>this is modal window</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-danger" type="button" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!--индикаторы прогресса-->
+        <div class="container">
+            <div class="row">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-primary" style="min-width:2%; width: 37%;">    <!--min-width:2%; - минимальное заполнение. width: 37% - заполнено в данный момент-->
+                    </div>
+                    <div class="progress-bar progress-bar-warning" style="min-width:2%; width: 37%;">    <!--второй (дополнительный) цвет на шкале-->
+                    </div>
+                </div>
+                <div class="progress">
+                    <!-- progress-bar-striped - добавляет косую полосочку на шкале. active - анимация движения-->
+                    <div class="progress-bar progress-bar-success progress-bar-striped active" style="width: 73%;"></div>    <!-- progress-bar-striped - добавляет косую полосочку на шкале-->
+                </div>
+            </div>
+        </div>
+
+<!--типо подменю-->
+        <div class="container">
+            <div class="container">
+                <div class="row">
+                    <div class="nav nav-pills">
+                        <li class="active"><a href="#">Element1<span class="badge">18</span></a></li>
+                        <li><a href="#">Element2<span class="badge">28</span></a></li>
+                        <li><a href="#">Element3<span class="badge">48</span></a></li>
+                        <li><a href="#">Element4<span class="badge">15</span></a></li>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <!--превью элементы-->
+            <div class="row">
+                <div class="col-xs-6 col-sm-4 col-md-4">
+                    <div class="thumbnail">                                <!--делает рамку вокруг элемента-->
+                        <img src="http://placehold.it/650x250" alt="">    <!--типо как превьюшка для элемента-->
+                        <div class="caption">                                <!--делает как быописание к нашему элементу(товару)-->
+                            <h3><a href="#">The name of us post</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                        <a href="#" class="btn btn-success">Information <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-4">
+                    <div class="thumbnail">                                <!--делает рамку вокруг элемента-->
+                        <img src="http://placehold.it/350x250" alt="">    <!--типо как превьюшка для элемента-->
+                        <div class="caption">                                <!--делает как быописание к нашему элементу(товару)-->
+                            <h3><a href="#">The name of us post</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                        <a href="#" class="btn btn-success">Information <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-4">
+                    <div class="thumbnail">                                <!--делает рамку вокруг элемента-->
+                        <img src="http://placehold.it/350x250" alt="">    <!--типо как превьюшка для элемента-->
+                        <div class="caption">                                <!--делает как быописание к нашему элементу(товару)-->
+                            <h3><a href="#">The name of us post</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                        <a href="#" class="btn btn-success">Information <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-4">
+                    <div class="thumbnail">                                <!--делает рамку вокруг элемента-->
+                        <img src="http://placehold.it/350x250" alt="">    <!--типо как превьюшка для элемента-->
+                        <div class="caption">                                <!--делает как быописание к нашему элементу(товару)-->
+                            <h3><a href="#">The name of us post</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                        <a href="#" class="btn btn-success">Information <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-4">
+                    <div class="thumbnail">                                <!--делает рамку вокруг элемента-->
+                        <img src="http://placehold.it/350x250" alt="">    <!--типо как превьюшка для элемента-->
+                        <div class="caption">                                <!--делает как быописание к нашему элементу(товару)-->
+                            <h3><a href="#">The name of us post</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                        <a href="#" class="btn btn-success">Information <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-4">
+                    <div class="thumbnail">                                <!--делает рамку вокруг элемента-->
+                        <img src="http://placehold.it/350x250" alt="">    <!--типо как превьюшка для элемента-->
+                        <div class="caption">                                <!--делает как быописание к нашему элементу(товару)-->
+                            <h3><a href="#">The name of us post</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                        <a href="#" class="btn btn-success">Information <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!--постраничная навигация-->
+    <!--.text-left, .text-center и .text-right могут быть использованы только для изменения расположения-->
+    <!--text-center - постановка содержимого в центре-->
+        <div class="container text-center">
+            <nav>
+                <ul class="pagination">        <!--размер задаеться как кнопкам-->
+                    <!--вид возврата на 2 странички-->
+                    <!--class="disabled" - ДЕЛАЕТ ВИД что кнопка отключена-->
+                    <li class="disabled">
+                        <a href="#">
+                            <i class="fa fa-chevron-left"></i>
+                            <i class="fa fa-chevron-left"></i>
+                        </a>
+                    </li>
+                    <!--вид возврата на 1 страничку-->
+                    <li class="disabled">
+                        <a href="#">
+                            <i class="fa fa-chevron-left"></i>
+                        </a>
+                    </li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">6</a></li>
+                    <!--вид вперед на 1 страничку-->
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-chevron-right"></i>
+                        </a>
+                    </li>
+                    <!--вид вперед на 2 странички-->
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-chevron-right"></i>
+                            <i class="fa fa-chevron-right"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <nav>
+                <ul class="pager">
+                    <!--&larr; и &rarr; - это спец символы хтмл(как alt+25)-->
+                    <!--previous и next - разводят элементы в разные стороны-->
+                    <li class="previous"><a href="#">&larr; Old note</a></li>
+                    <li class="next"><a href="#">New note &rarr;</a></li>
+                </ul>
+            </nav>
+        </div>
+
+<!--подсказка и всплыв окна-->
+    <div class="container">
+        <!--без скрипта внизу не работает-->
+        <!--tooltip - означает что это подсказка, data-placement="right" - сторону открытия подсказки-->
+        <!--data-trigger="click" - устанавливает в какой момент будет выпадать меню(click - при нажатии)-->
+        <button class="btn btn-info"
+                type="button"
+                data-toggle="tooltip"
+                data-placement="right"
+                title="help text"
+                data-trigger="click">button</button>
+        <!--tooltip - означает что это всплыв меню, data-placement="right" - сторону всплытия меню-->
+        <!--data-trigger="hover" - устанавливает в какой момент будет выпадать меню(hover - при наведении)-->
+        <button class="btn btn-info"
+                 type="button"
+                 data-toggle="popover"
+                 title="header window"
+                 data-content="smt text fo you"
+                 data-placement="top"
+                 data-trigger="hover">button 1</button>
+
+                 <!--это чкрипт который нужен для работы всплыв меню и подсказки-->
+                 <script>
+                     $(function() {
+                         $('[data-toggle="tooltip"]').tooltip();
+                         $('[data-toggle="popover"]').popover();
+                     })
+                 </script>
+    </div>
+
+<!--окна оповещений и ошибок-->
+    <div class="container">
+        <div class="alert alert-primary">
+            alert-primary
+        </div>
+        <div class="alert alert-info">
+            alert-info
+        </div>
+        <div class="alert alert-success">
+            alert-success
+        </div>
+        <div class="alert alert-warning">
+            alert-warning
+        </div>
+        <!--alert-dismissible - значит что элемент можно закрыть-->
+        <div class="alert alert-danger alert-dismissible">
+                    <!--data-dismiss="alert" - значит что он закрывает тот элемент в каком расположен-->
+            <button type="button" name="button" class="close" data-dismiss="alert"><i class="fa fa-times fa-fw"></i></button>
+            alert-danger
+        </div>
+    </div>
+        <br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

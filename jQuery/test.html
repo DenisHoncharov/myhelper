@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test jQ</title>
+    <script type="text/javascript" src="jQuery/jquery-3.1.1.min.js"></script>
+
+    <style>
+        .div_1{
+            background-color: #e07474;
+        }
+        .div_2{
+            background-color: lime;
+        }
+    </style>
+</head>
+<body>
+<!--вызывает функцию скрыть ("hide()") для элемента с id=test -->
+    <div id="test" class="tests" onclick="$('#test').hide()">Test1</div>
+
+    <div class="tests">Test2</div>
+
+    <p class="tests">Test3</p>
+
+<!--примеры функций-->
+    <div>
+        <script type="text/javascript">
+            var str = "    str    ";
+        //закоментировал что бы не вылазили алерты
+            //alert(str);
+            //alert($.trim(str));
+        </script>
+
+        <script type="text/javascript">
+        //вывод содержимого в теге с id=test
+            var test = $('#test').html();
+            alert(test);
+        </script>
+
+
+        <script type="text/javascript">
+        //если обращаемся к элементу по классу, то мы получаем массив
+            var test = $('div.tests');
+            for(var i = 0; i < test.length; i++){
+                test.get(i).style.color = "red";
+            }
+        //обращение к абзацу для задания ему зеленого цвета через 2 сек после загрузки странички
+            setTimeout("$('p.tests').get(0).style.color = 'green'", 2000);
+        </script>
+    </div>
+
+<!--выборка по тегам с опред парамерами-->
+    <div>
+        <hr>
+        <img src="../webMBoostrap/image/1.jpg" alt="1" height="300px">
+        <img src="../webMBoostrap/image/2.jpg" alt="1" height="300px" title="2">
+
+        <script type="text/javascript">
+            var withAtr = $("img[title]"); //выбор всех тегов img у которых есть атрибут title
+            //alert (withAtr.length);
+        </script>
+    </div>
+
+<!--скрытие или показ элемента-->
+    <div>
+        <hr>
+        <img id="img" src="../webMBoostrap/image/3.jpg" alt="" height="300px" style="display:none;">
+        <button id="showBtn" type="button" name="button" onclick="return showImg()">Показать Картинку</button>
+        <script type="text/javascript">
+            function showImg (){
+                $("#img").show();     //делает видимым элемент с id=img
+                $("#showBtn").hide(); //делает не видимым элемент с id=showBtn
+            }
+        </script>
+    </div>
+
+<!--изменение свойств пользователем-->
+    <div id="div">
+        <hr>
+        Text
+
+        <script type="text/javascript">
+            var div = prompt("1 or 2");
+
+            $("#div").attr("class", "div_" + div);    //для добавления атрибута к тегу исп функция attr(атрибут, значение)
+        </script>
+    </div>
+
+<!--манипyлирование стилями-->
+    <div id="mani">
+        <hr>
+        There is Block
+
+        <script type="text/javascript">
+            $("#mani").css("font-size", "25px");
+        </script>
+    </div>
+
+<!--вставка, удаление и очистка доп инф в блок-->
+    <div>
+        <hr>
+        <div id="remove">Hello</div>
+        <div id="remove2">Hello</div>
+        <div id="appended">
+
+        </div>
+
+        <img src="1" alt="" class="a">
+        <img src="2" alt="" class="a">
+        <img src="3" alt="" class="a">
+
+        <a href="#" class="a+">1</a>
+        <a href="#" class="a">2</a>
+
+        <script type="text/javascript">
+            $("#appended").append("<span>Text</span>");   //вставка одного элемента в конец блока
+            $("img[class]").appendTo("#appended");        //вставка элементов img[class](у котор указ класс) в конец блока с id=appended
+            $("img[class]").prependTo("#appended");        //вставка элементов img[class](у котор указ класс) в начало блока с id=appended
+            $("a[class]").wrap("<p style=\"front-size: 20px;\"></p>");    //обворачивание элемента в атрибут "<p style=\"front-size: 20px;\"></p>"
+
+            $("<p>Text after</p>").insertAfter("#appended");    //текст после блока
+            $("<p>Text before</p>").insertBefore("#appended");    //текст перед блоком
+
+            //замена одного элемента другим
+            $("img[src=1]").replaceWith($("a[class=\"a+\"]"));
+
+            //удаление элемента(блока)
+            $("#remove").remove();
+
+            //очистка элемента(блока)
+            $("#remove2").empty();
+        </script>
+    </div>
+
+<!--обработка событий не в html-->
+    <div id="screen">
+        <hr>
+        <div his="1" style="height: 50px; width: 50px; background-color:red;"></div>
+        <div his="1" style="height: 50px; width: 50px; background-color:blue;"></div>
+        <div his="1" style="height: 50px; width: 50px; background-color:lime;"></div>
+
+        <script type="text/javascript">
+            function addSize(event) {    //event - слушатель мышки
+                                    //event.target - возвращает конкретный элемент над которым было произведено действие
+                                                //style.width - возвращает ширину конкретного элемента
+                                                            //вывод числа (без последних букв "px")
+                var windthBlock = Number(event.target.style.width.substring(0, event.target.style.width.length-2));    //преведение к целочисленному
+                event.target.style.width = (windthBlock + 10) + "px";    //задание ширины для блока
+
+                //определение местоположения мышки (но только на блоках к которым обращаеться bind)
+                $("<p>Mous on x - " + event.screenX + ", on y - " + event.screenY + "</p>").insertAfter('#screen');
+            }
+
+            $(document).ready(function() {    //когда докум будет полностью загружен вызоветься функция
+                //для всех блоков див у которых есть атрибут "his" будет обрабатываться событие
+                $("div[his]").bind("click", addSize);    //bind("название_события", что выполняет), он сам(автоматом) передает event в фенкцию которую вызывает
+                //вместо bind целесообразней исп on. Разница в них заключ в том что on видит созданные пользовтелем поля
+                //on("событие", "в каком документе", что_делать);
+                //$(document).on("click", "#screen", addSize);
+            });
+        </script>
+    </div>
+
+<!--анимация--><!--доп анимации можно посмотреть в док к jquery-->
+    <div>
+        <hr>
+        <a href="#" id="hide" onclick = "return false">Hide Comment</a>
+        <a href="#" id="show" style="display:none" onclick = "return false">Show comment</a>
+
+        <div id="comment">
+            <p>Comment number 1</p>
+            <p>Comment number 2</p>
+            <p>Comment number 3</p>
+        </div>
+
+        <script type="text/javascript">
+            function hideComments() {
+                $("#comment").hide(1000, function(){    //прячет комментарии со скоростью 1с
+                    $("#hide").hide();                  //прячет кнопку с id="hide"
+                    $("#show").show();                  //показывает кнопку с id="show"
+                });
+            }
+
+            function showComments() {
+                $("#comment").show(1000, function(){    //показывет комментарии со скоростью 1с
+                    $("#show").hide();                    //прячет кнопку с id="show"
+                    $("#hide").show();                    //показывает кнопку с id="hide"
+                });
+            }
+            $(document).ready (function() {
+                $("#hide").bind("click", hideComments);    //цепляет слушателя на ссылку с id="hide"
+                $("#show").bind("click", showComments);    //цепляет слушателя на ссылку с id="show"
+            });
+        </script>
+    </div>
+
+<!--доп анимац-->
+    <div>
+        <p id="animation">
+            <img src="https://storletcar.com/uploads/car/thumbnail/5672ef786672692a02b70000/preview_preview_thumb_car.jpg" alt="image" title="Image" id="img1" width="200px">
+        </p>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("#img1").bind("click", function(event) {
+                    $(event.target).parent().css("text-align", "center");    //parent() - возвращает сам объект. Ценрирует содержимое
+                    $(event.target).animate({                    //вызывает функцию animate(что_делать, за_какое_время);
+                        width: $(event.target).width() * 2,       //увеличивает ширину в 2 раза
+                        height: $(event.target).height() * 2      //увеличивает высоту в 2 раза
+                    }, 3000);                                    //за 3 секунды
+                });
+            });
+        </script>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</body>
+</html>

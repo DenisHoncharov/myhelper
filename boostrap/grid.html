@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Boostrap first</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">    <!--адаптация для смарфонов и т.д.-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  </head>
+  <body>
+      <div class="container">                   <!--"container" - имеет заданную ширину. container-fluid - растягиваеться на всю ширину экрана-->
+          <h1>Hello. You are on first boostrap site</h1>
+          <p>Hello. You are on first boostrap site</p>
+      </div>
+
+    <!--
+        Типы существующих классов для сетки(12столбцов у каждой сетки)
+        xs - екстра маленькие для телефонов
+        sm - маленькие для планшетов
+        md - средние для ноутов
+        lg - для больших экранов
+    -->
+
+    <div class="container-fluid">                <!--container-fluid - растягиваеться на всю ширину экрана-->
+        <h1>Три различных блока</h1>
+        <div class="row">                        <!--row - обозначает что этот ряд будет делиться на столбики-->
+            <div class="col-md-4" style="background-color: #ff9999">Left</div>                 <!--col - значит что это столбик. col-md - задаем ему значение для мониторов.
+                                                                                              цифра обозначает сколько столбцев будет занимать именно этот элем(квадрат)
+                                                                                              (типо относительное задание ширины)-->
+            <div class="col-md-4" style="background-color: #99ccff">Midl</div>
+            <div class="col-md-4" style="background-color: #00cc99">Right</div>
+        </div>
+
+
+                                <!--Home Work-->
+<br>
+        <div class="row">
+            <div class="col-md-6" style="background-color: #33BE00">Left</div>
+            <div class="col-md-6"style="background-color: #BEB807">Right</div>
+        </div>
+<br>
+        <div class="row">
+          <div class="col-md-2" style="background-color: #BE3F30">Left</div>
+          <div class="col-md-2"style="background-color: #4B75BE">Left + 1</div>
+          <div class="col-md-2" style="background-color: #BE2C22">Left + 2</div>
+          <div class="col-md-2"style="background-color: #BE43A7">Right + 2</div>
+          <div class="col-md-2" style="background-color: #91BE6C">Right + 1</div>
+          <div class="col-md-2"style="background-color: #BE3850">Right</div>
+        </div>
+<br>
+        <div class="row">
+          <div class="col-md-3" style="background-color: #BE61AB">Left</div>
+          <div class="col-md-3"style="background-color: #5E61AA">Left + 1</div>
+          <div class="col-md-2" style="background-color: #972A27">Left + 2</div>
+          <div class="col-md-2"style="background-color: #15AB7B">Right + 2</div>
+          <div class="col-md-2" style="background-color: #CF1A17">Right + 1</div>
+        </div>
+    </div>
+  </body>
+</html>

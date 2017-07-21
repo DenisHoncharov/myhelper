@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>WebM Grid Test</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">    <!--адаптация для смарфонов и т.д.-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+     <!--<style> .row div{ background-color: #336; height: 300px;} </style>-->
+     <style> .container-fluid .row{margin-top: 50px;} </style>                   <!--поднятие нашего меню навигации на 50px-->
+  </head>
+  <body>
+
+    <div class="container-fluid">
+      <div class="row">
+        <h1>Site name</h1>
+        <div class="navbar navbar-inverse navbar-fixed-top">                                                            <!--navbar-inverse - делает навбар темным. navbar-fixed-top - фиксирует наверху
+                                                                                                                          navbar-fixed-bottom, navbar-static-top - делает на всю ширину и вверху(но только не в блоке)-->
+          <div class="container">
+            <div class="navbar-header">                                                                <!--navbar-header - главная часть меню навигации(логотип, название)-->
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">                              <!--navbar-toggle - отвечает за отображение и скрывание меню. Кнопка для выскакивающего меню.-->
+                                                                                                                                              <!--data-toggle="collapse" - обозначает какой элемент он будет скрывать(class="collapse)-->
+                                                                                                                                              <!--data-target="#responsive-menu" - уточняет к какому блоку(id="responsive-menu")-->
+                <span class="sr-only">Open nav</span>                                                             <!--делает эту кнопку видимой только на скрин ридерах(для слепых)-->
+                <span class="icon-bar"></span>                                                                    <!--Делает полосочку на кнопке-->
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a href="#" class="navbar-brand">The name of company</a>                                 <!--navbar-brand - кликабельный "логотип" компании-->
+            </div>
+            <div class="collapse navbar-collapse" id="responsive-menu">                                                     <!--collapse navbar-collapse - навигационная часть меню навигации(ссылки на сайте)-->
+              <ul class="nav navbar-nav">
+                <li><a href="#">Punkt 1</a></li>
+                <li><a href="#">Punkt 2</a></li>
+                <li><a href="#">Punkt 3</a></li>
+                <li><a href="#">Punkt 4</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4 ">
+            <div class="row">
+              <div class="col-md-6"></div>
+              <div class="col-md-6"></div>
+            </div>
+          </div>
+          <div class="col-md-8 hidden-sm visible-md visible-xs visible-lg"></div>                     <!--hidden - скрытие блока при опред размере экрана, visible - показ блока при опред размере экрана-->
+        </div>
+      </div>
+  </body>
+</html>

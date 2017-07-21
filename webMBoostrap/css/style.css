@@ -1,0 +1,17 @@
+.container-fluid .row {
+    margin-top: 50px;
+}
+
+#mainnav {
+        margin: 0px;
+}
+
+a.spoiler::after {
+        /*напишет после текста к спойлеру " [-]" когда спойлер будет открыт*/
+        content: " [-]";
+}
+
+a.spoiler.collapsed::after {
+        /*напишет после текста к спойлеру " [+]" когда спойлер будет закрыт*/
+        content: " [+]";
+}

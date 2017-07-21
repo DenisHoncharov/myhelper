@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Boostrap Site</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--адаптация для смарфонов и т.д.-->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <!--<style> .row div{ background-color: #336; height: 300px;} </style>-->
+    </head>
+    <body>
+        <!--navbar - шапка сайта. navbar-inverse - черного цвета. nambar-fixed-top - постоянно вверху -->
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <!--это для маленького экрана, что бы рисовалась кнопочка-->
+                        <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <!--что бы рисовался логотип компании-->
+                        <a href="#" class="navbar-brand">Test Project</a>
+                    </div>
+                    <!--само меню. collapse - делает стили для сворачивания элементов-->
+                    <div class="navbar-collapse collapse">
+                        <form action="" class="navbar-form navbar-right">
+                            <!--для каждого элемента формы указываем свою группу, для того что бы между каждым элементом был отступ на мобильном экране-->
+                            <div class="form-group">
+                                <input class="form-control" type="text" placeholder="Email" name="" value="">
+                            </div>
+                            <!--для каждого элемента формы указываем свою группу, для того что бы между каждым элементом был отступ на мобильном экране-->
+                            <div class="form-group">
+                                <input class="form-control" type="password" placeholder="Password" name="" value="">
+                            </div>
+                            <!--для каждого элемента формы указываем свою группу, для того что бы между каждым элементом был отступ на мобильном экране-->
+                            <div class="form-group">
+                                <button class="btn btn-success" type="submit" name="button">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--просто табличка серого цвета на всю ширину-->
+            <div class="jumbotron">
+                <div class="container">
+                    <h1>Hello Word</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p><a href="#" class="btn btn-primary btn-lg">Khow more &raquo;</a></p>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2>Title 1</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p><a href="#" class="btn btn-default">Khow more &raquo;</a></p>
+                    </div>
+                    <div class="col-md-4">
+                        <h2>Title 2</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p><a href="#" class="btn btn-default">Khow more &raquo;</a></p>
+                    </div>
+                    <div class="col-md-4">
+                        <h2>Title 3</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p><a href="#" class="btn btn-default">Khow more &raquo;</a></p>
+                    </div>
+                </div>
+                <hr>
+                <footer>
+                    <p>&copy; All is save 2017</p>
+                </footer>
+            </div>
+
+    </body>
+</html>

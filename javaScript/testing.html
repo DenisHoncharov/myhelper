@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Testing js in html</title>
+    <script type="text/javascript">
+//объявление переменной
+        var htmlVariable = 21;
+// вывод значения переменной
+        document.write("Variable num " + htmlVariable + "<br>");
+
+// превождение к типу
+        var str_1 = "10";
+        var str_2 = "3";
+        document.write(Number(str_1) + Number(str_2));
+
+//alert confirm prompt
+            //confirm - всплывающее окно с возможностью принятия и отмены
+        if(confirm("Do you want that we say text for you???")){
+            //prompt - всплывающее окно с текстовым полем
+            var textForYou = prompt("Write text:");
+            //alert - просто всплывающее окно
+            alert("You say \"" + textForYou + "\"");
+        }else{
+            alert("You don't say anything");
+        }
+//События и их обработка
+        function buttonclick (button) {
+            //через параметр функции можно получить доступ к любым атрибутам вызванного элемента
+            alert("you are click at button whith name - " + button.name);
+        }
+
+        var howMuchSelect = 0;
+
+        function counters(span) {
+            howMuchSelect++;
+            //innerHTML - заменяет содержимое в вызванном элементе на указанное в кавычках
+            span.innerHTML = "На этот элемент было наведено " + howMuchSelect + " раз";
+        }
+
+    //обработка форм + регулярные выражения
+        function validation(form){
+            var fail = false;
+            var name = form.name.value;
+            var mail = form.mail.value;
+
+            //регулярное выражение
+            var adr_pattern = /[a-z0-9_-]+@[a-z0-9-_]+\.[a-z]{2,5}/i;
+
+
+            if(name == "" || name == " "){
+                fail = "put your name";
+                        //проверка соответсвия строчки регулярному выражению
+            }else if (adr_pattern.test(mail) == false) {
+                fail = "put your mail";
+            }
+
+             if (fail) {
+                alert(fail);
+            }else{
+    //перенаправка пользователя на другой сайт
+                window.location = "http://vk.com";
+    //обновление странички
+                window.reload;
+            }
+        }
+
+//таймер
+            //setInterval - вызываеться до тех пор, пока не будет вызвана функция - clearInterval;
+            //первый аргумент - это то, что будет вызываться. Второй - с какой переодичностью
+        var id = setInterval("myFunck_1()", 1000);
+        var counter = 0;
+
+        function myFunck_1 () {
+            counter++;
+            alert("Second is coming " + counter);
+            if(counter > 3){
+                clearInterval(id);    //очистка интервала указанного в параметре
+            }
+        }
+
+        /**********************************************************************/
+
+        function timer(){
+            counter++;
+            document.getElementById('count').innerHTML = counter;
+            //setTimeout - то же, что и интервал только вызываеться один раз через указанное время
+            setTimeout("timer()", 1000);
+        }
+    </script>
+</head>
+
+<!--onload - при загрузке элемента-->
+<body onload="timer()">
+    <br>
+
+<!--События и их обработка-->
+    <div>
+                <!--onclick - это вызов определеннного сыбытия(нажатие в данном случае)-->
+                <!--в нем мы должы вызвать функцию из js скрипта-->
+                <!--this - обознчает что мы будем передавать вызванной функцие именно этот элемент-->
+        <input type="button" name="b" value="Click me" onclick="buttonclick (this)">
+
+        <span onmouseover="counters(this)">На этот элемент было наведено 0 раз</span>
+    </div>
+
+<!--обработка форм-->
+    <div>
+<hr>
+        <!--onsubmit - по нажатию кнопки с типом submit(для отправки формы) -->
+        <form class="" action="" method="post" name="test" onsubmit="validation(this)">
+            <label for="name">Name</label>
+            <input type="text" name="name" placeholder="name" id="name"><br><br>
+            <label for="mail">Mail</label>
+            <input type="text" name="mail" placeholder="mail" id="mail"><br><br>
+            <input type="submit" name="submit" value="Push">
+        </form>
+        <br><hr><br>
+        <!--Эта форма не будет ничего отправлять если у пользователя отключен JS -->
+        <form class="" action="" method="post" name="test" id="form">
+            <label for="name">Name</label>
+            <input type="text" name="name" placeholder="name" id="name"><br><br>
+            <label for="mail">Mail</label>
+            <input type="text" name="mail" placeholder="mail" id="mail"><br><br>
+                                                                    <!--document.getElementById - достает из нашего документа элемент с указанным id-->
+            <input type="button" name="submit" value="Push" onclick="validation(document.getElementById('form'))">
+        </form>
+    </div>
+<hr>
+<!--таймер-->
+    <div>
+        Секунд прошло <span id="count">-1</span>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
